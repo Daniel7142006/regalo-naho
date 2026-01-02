@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>365 Días de Ti</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="escena">
+    <div class="libro" id="libro">
+      <div class="lomo"></div>
+      
+      <div class="cara portada">
+        <h1>365 Días de Ti</h1>
+        <div class="decoracion">❧</div>
+        <p>Dedicado a ti mi Naho</p>
+        <button onclick="abrirLibro()">Abrir el Libro</button>
+      </div>
+
+      <div class="cara interior">
+        <h2 id="fecha-hoy">Cargando...</h2>
+        <div class="linea"></div>
+        <p id="carta-diaria">Preparando tu mensaje...</p>
+        <div class="navegacion">
+          <button onclick="cambiarDia(-1)" class="btn-nav">← Anterior</button>
+          <span id="indicador-dia">Día 1 de 365</span>
+          <button onclick="cambiarDia(1)" class="btn-nav">Siguiente →</button>
+        </div>
+        <button onclick="cerrarLibro()" class="btn-cerrar">Cerrar el Libro</button>
+      </div>
+
+      <div class="cara contraportada">
+        <div class="diseño-final">
+          <p>Continuará...</p>
+          <span>♥</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="estadisticas">
+    📖 Día <strong id="dia-numero">1</strong> de 365<br>
+    💌 Mensajes leídos: <strong id="mensajes-leidos">0</strong>
+  </div>
+
+  <div class="controles-musica">
+    <button onclick="toggleMusica()" id="btn-musica">🔊</button>
+    <input type="range" min="0" max="100" value="30" onchange="cambiarVolumen(this.value)" id="control-volumen">
+  </div>
+
+  <!-- Audio de fondo -->
+  <audio id="musica-fondo" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script src="mensajes.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
